@@ -4,15 +4,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(882, 683)
+        MainWindow.resize(1463, 954)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.openGL = QtWidgets.QOpenGLWidget(self.centralwidget)
-        self.openGL.setGeometry(QtCore.QRect(0, 0, 881, 641))
-        self.openGL.setObjectName("openGL")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(-1, -1, 1461, 921))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.openGLWidget = QtWidgets.QOpenGLWidget(self.verticalLayoutWidget)
+        self.openGLWidget.setObjectName("openGLWidget")
+        self.verticalLayout.addWidget(self.openGLWidget)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 882, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1463, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -77,7 +83,6 @@ class Ui_MainWindow(object):
         self.actionRight_Plane.setText(_translate("MainWindow", "Right Plane"))
         self.actionFront_Plane.setText(_translate("MainWindow", "Front Plane"))
         self.actionCut_Plane.setText(_translate("MainWindow", "Cut Plane"))
-
 
 if __name__ == "__main__":
     import sys
